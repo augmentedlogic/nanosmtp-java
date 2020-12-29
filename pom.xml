@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.augmentedlogic.nanosmtp</groupId>
+  <artifactId>nanosmtp</artifactId>
+  <version>0.1</version>
+  <name>A Small SMTP Client Library</name>
+  <properties>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+  <licenses>
+    <license>
+      <name>Apache Licence v2</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Wolfgang Hauptfleisch</name>
+      <email>dev@augmentedlogic.com</email>
+    </developer>
+  </developers>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Built-By>Wolfgang Hauptfleisch</Built-By>
+              <License>Apache v2</License>
+              <Vendor-Info>https://developer.augmentedlogic.com</Vendor-Info>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.0.1</version>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Built-By>Wolfgang Hauptfleisch</Built-By>
+              <License>Apache v2</License>
+              <Vendor-Info>https://developer.augmentedlogic.com</Vendor-Info>
+            </manifestEntries>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <sourcepath>src/main/java</sourcepath>
+          <archive>
+            <manifestEntries>
+              <Built-By>Wolfgang Hauptfleisch</Built-By>
+              <License>Apache v2</License>
+              <Vendor-Info>https://developer.augmentedlogic.com</Vendor-Info>
+            </manifestEntries>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+         <version>1.5</version>
+         <executions>
+         <execution>
+         <id>sign-artifacts</id>
+         <phase>verify</phase>
+         <goals>
+         <goal>sign</goal>
+         </goals>
+         </execution>
+       </executions>
+     </plugin>
+    </plugins>
+  </build>
+</project>
